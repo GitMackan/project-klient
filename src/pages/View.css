@@ -5,12 +5,14 @@
     border: 1px red solid;
     align-content: center;
     margin: 0 auto;
+    margin-top: 50px;
 }
 .card-header {
     height: 30%;
-    background: #1a4469;
+    background-color: #ee8b52;
     color: white;
     text-align: center;
+    margin-bottom: 1em;
 }
 .card-header p {
     font-size: 20px;

@@ -17,7 +17,7 @@ const Header = () => {
     }, [location])
     return (
         <div className='header'>
-            <p className='logo'>Filmrecencioner</p>
+            <p className='logo'>Marcus Recenserar</p>
             <div className='header-right'>
                 <Link to="/">
                     <p className={`${activeTab === "Home" ? "active" : ""}`}onClick={() => setActiveTab("Home")}>Start</p>

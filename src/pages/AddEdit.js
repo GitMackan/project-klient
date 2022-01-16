@@ -2,7 +2,6 @@ import React, {useState, useEffect } from 'react'
 import { useNavigate, useParams} from "react-router-dom"
 import "./AddEdit.css"
 import { toast } from 'react-toastify';
-import getMovies from './Home.js';
 
 let initialState = {
     title: "",
@@ -32,7 +31,11 @@ const AddEdit = () => {
         })
         .then(response => response.json())
         .then(data => {
-            setState({ title: data.title, director: data.director, year: data.year, imdb: data.imdb, review: data.review});
+            setState({ title: data.title, 
+                director: data.director, 
+                year: data.year, 
+                imdb: data.imdb, 
+                review: data.review});
         })
     };
     
@@ -58,7 +61,6 @@ const AddEdit = () => {
             }
         })
         .then(toast.success("Film uppdaterad!"));
-        getMovies();
     };
 
     const handleSubmit = (e) => {
@@ -66,13 +68,17 @@ const AddEdit = () => {
         if(!title || !director || !year || !imdb || !review) {
             toast.error("Vänligen fyll i alla fält!");
         } else {
+            if (!/^\d+$/.test(year)) {
+                toast.error("År får bara innehålla siffror");
+            } else {
         if(!id) {
             addMovie(newMovie);
         } else {
             updateMovie(newMovie, id);
         }
-            navigate("/");
+            setTimeout(() => navigate("/"), 500);
         }
+    }
     };
 
     const handleInputChange = (e) => {

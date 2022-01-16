@@ -29,15 +29,15 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div style={{ marginTop: "50px" }}>
             <table className='home-table'>
                 <thead>
                     <tr>
-                        <th style={{textAlign: "center"}}>Title: </th>
-                        <th style={{textAlign: "center"}}>Regisör: </th>
+                        <th style={{textAlign: "center"}}>Titel: </th>
+                        <th style={{textAlign: "center"}}>Regissör: </th>
                         <th style={{textAlign: "center"}}>År: </th>
                         <th style={{textAlign: "center"}}>IMDB: </th>
-                        <th style={{textAlign: "center"}}>Action: </th>
+                        <th style={{textAlign: "center"}}>Mer: </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,11 +50,11 @@ const Home = () => {
                                 <td><a href={item.imdb} target="blank">Länk</a></td>
                                 <td>
                                     <Link to={`/update/${item._id}`}>
-                                        <button className='btn btn-edit'>Edit</button>
+                                        <button className='btn btn-edit'>Ändra</button>
                                     </Link>
-                                    <button className='btn btn-delete' onClick={() => deleteMovie(item._id)}>Delete</button>
+                                    <button className='btn btn-delete' onClick={() => deleteMovie(item._id)}>Radera</button>
                                     <Link to={`/view/${item._id}`}>
-                                        <button className='btn btn-view'>View</button>
+                                        <button className='btn btn-view'>Se mer</button>
                                     </Link>
                                 </td>
                             </tr>
