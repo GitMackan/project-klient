@@ -3,15 +3,23 @@ import {Link, useLocation} from "react-router-dom"
 import "./Header.css"
 
 const Header = () => {
+    // Deklarera state "activeTab" och sätt defaultvärde till home
     const [activeTab, setActiveTab] = useState("home");
 
+    // Deklarera location som håller koll på ändringar i URLen
     const location = useLocation();
     useEffect(() => {
+        // Om URL är startsida
         if(location.pathname === "/") {
+            // Ange ny state till activeTab
             setActiveTab("Home")
+            // Om URL är /add
         } else if (location.pathname === "/add") {
+            // Ange ny state till activeTab
             setActiveTab("Adduser")
+            // Om url är /about
         } else if (location.pathname === "/about") {
+            // Ange ny state till activeTab
             setActiveTab("About") 
         }
     }, [location])

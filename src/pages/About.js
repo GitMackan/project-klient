@@ -1,3 +1,4 @@
+// Importera paket och bibliotek
 import React from 'react'
 import "./About.css"
 
